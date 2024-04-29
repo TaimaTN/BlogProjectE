@@ -4,7 +4,7 @@ import blogRouter from './blog/router.js';
 import userRouter from './user/router.js';
 import { connectDB } from '../DBconnection/connection.js';
 
-const PORT=Process.env.PORT|| 3000;
+const PORT=process.env.PORT|| 3000;
 const initApp=(express)=>{
     connectDB();
     const app= express();
