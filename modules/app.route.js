@@ -4,6 +4,7 @@ import blogRouter from './blog/router.js';
 import userRouter from './user/router.js';
 import { connectDB } from '../DBconnection/connection.js';
 
+const PORT=Process.env.PORT|| 3000;
 const initApp=(express)=>{
     connectDB();
     const app= express();
@@ -19,8 +20,8 @@ const initApp=(express)=>{
         return res.json("page not found");
     });
 
-    app.listen(3000,()=>{
-        console.log("server runing on 3000")
+    app.listen(PORT,()=>{
+        console.log(`server runing on ${PORT}`)
     })
 }
 
