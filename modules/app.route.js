@@ -3,11 +3,13 @@ import homeRouter from './home/router.js';
 import blogRouter from './blog/router.js';
 import userRouter from './user/router.js';
 import { connectDB } from '../DBconnection/connection.js';
+import cors from 'cors';
 
 const PORT=process.env.PORT|| 3000;
 const initApp=(express)=>{
     connectDB();
     const app= express();
+    app.use(cors());// publish api request on front end code project
     app.use(express.json());
     // DEhault PaGE 
     app.use('/',homeRouter);
